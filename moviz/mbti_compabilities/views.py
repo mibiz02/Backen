@@ -15,3 +15,11 @@ def character_list(request):
         # print(serializer.data)
         return Response(serializer.data)
 
+@api_view(['GET'])
+def character_mbti_list(request, mbti_letter):
+    if request.method == 'GET':
+        characters = Character.objects.filter(character_MBTI_type=mbti_letter)
+        print('here')
+        serializer = CharacterSerializer(characters, many=True)
+        # print(serializer.data)
+        return Response(serializer.data)
