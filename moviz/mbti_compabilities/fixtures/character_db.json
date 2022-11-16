@@ -1,0 +1,482 @@
+[
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 1,
+        "fields": {
+            "character_name": "다스 베이더",
+            "character_MBTI_type": "ISTJ",
+            "movie_title": "스타 워즈",
+            "character_img_path": "https://static1.personality-database.com/profile_images/8babf12926994b308902ecfe1cfdec16.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 2,
+        "fields": {
+            "character_name": "앨마 \"할머니\" 마드리갈",
+            "character_MBTI_type": "ISTJ",
+            "movie_title": "참 (2021)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/b3b94f67227741ffbe1fdff6d680310f.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 3,
+        "fields": {
+            "character_name": "암펌",
+            "character_MBTI_type": "ISTJ",
+            "movie_title": "구유GF유팬더(프랜차이즈)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/a2a74315a2e040ac931293752f6270c2.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 4,
+        "fields": {
+            "character_name": "마더 고델",
+            "character_MBTI_type": "ESTJ",
+            "movie_title": "얽힌 (2010)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/fc176ed96a1a45f99b6f7b6740296a40.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 5,
+        "fields": {
+            "character_name": "레지나 조지",
+            "character_MBTI_type": "ESTJ",
+            "movie_title": "비열한 소녀들 (2004)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/3c4226c6f6ff4f7cac2e3346118ad2dc.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 6,
+        "fields": {
+            "character_name": "헤르미온느 그레인저",
+            "character_MBTI_type": "ESTJ",
+            "movie_title": "해리 포터 / Wizarding World 영화",
+            "character_img_path": "https://static1.personality-database.com/profile_images/a08308727fa443b4af8257f16481f2a8.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 7,
+        "fields": {
+            "character_name": "브루노 마드리갈",
+            "character_MBTI_type": "ISFJ",
+            "movie_title": "참 (2021)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/2c15efe391404037be7c842fd13f6c58.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 8,
+        "fields": {
+            "character_name": "내레이터",
+            "character_MBTI_type": "ISFJ",
+            "movie_title": "파이트 클럽 (1999)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/b7e656dd5a73446198d86fe00215f355.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 9,
+        "fields": {
+            "character_name": "캐리 화이트",
+            "character_MBTI_type": "ISFJ",
+            "movie_title": "캐리 (1976)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/a71986ab94dd461a90f0e29413db81a3.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 10,
+        "fields": {
+            "character_name": "셰어 호로비츠",
+            "character_MBTI_type": "ESFJ",
+            "movie_title": "클루리스 (1995)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/ddf1df138782479c8426c3707f13f5aa.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 11,
+        "fields": {
+            "character_name": "그레첸 위너스",
+            "character_MBTI_type": "ESFJ",
+            "movie_title": "비열한 소녀들 (2004)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/ee8a31935c5d4bd194eb16f2b5b1125f.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 12,
+        "fields": {
+            "character_name": "시오반",
+            "character_MBTI_type": "ESFJ",
+            "movie_title": "웬델과 야생",
+            "character_img_path": "https://static1.personality-database.com/profile_images/b28bd8da51fc43659a62ca82fcb9554d.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 13,
+        "fields": {
+            "character_name": "진주",
+            "character_MBTI_type": "ESFP",
+            "movie_title": "진주 (2022)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/4e65daed8cd44216ab4dba455a015d41.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 14,
+        "fields": {
+            "character_name": "메리다",
+            "character_MBTI_type": "ESFP",
+            "movie_title": "브레이브 (2012)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/02f927a2ba224073a6a0b63ec1d3f6dc.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 15,
+        "fields": {
+            "character_name": "아나킨 스카이워커",
+            "character_MBTI_type": "ESFP",
+            "movie_title": "스타 워즈",
+            "character_img_path": "https://static1.personality-database.com/profile_images/fa20e828f4904a5f9628ef35766b1ae7.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 16,
+        "fields": {
+            "character_name": "엘리너 \"노라\" 레베타",
+            "character_MBTI_type": "ISFP",
+            "movie_title": "리벤지 (2022)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/39f8d420e6ed4264be59ebca729bb118.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 17,
+        "fields": {
+            "character_name": "코랄린 존스",
+            "character_MBTI_type": "ISFP",
+            "movie_title": "코렐라인 (2009)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/926d082382564039adab3506eb4da28c.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 18,
+        "fields": {
+            "character_name": "다이아나",
+            "character_MBTI_type": "ISFP",
+            "movie_title": "스펜서",
+            "character_img_path": "https://static1.personality-database.com/profile_images/12dce8c36a9841e28269f6c04a904879.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 19,
+        "fields": {
+            "character_name": "타일러 더든",
+            "character_MBTI_type": "ESTP",
+            "movie_title": "파이트 클럽 (1999)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/b7852ce6d9954ac8adebdfe7b4f21a38.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 20,
+        "fields": {
+            "character_name": "귤",
+            "character_MBTI_type": "ESTP",
+            "movie_title": "초고속 열차",
+            "character_img_path": "https://static1.personality-database.com/profile_images/9a3a9ba1630f4fcab1e8c252c0314b92.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 21,
+        "fields": {
+            "character_name": "제니퍼 체크",
+            "character_MBTI_type": "ESTP",
+            "movie_title": "제니퍼의 몸 (2009)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/860382881b934a65a9c511b40e36b1e9.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 22,
+        "fields": {
+            "character_name": "슈렉",
+            "character_MBTI_type": "ISTP",
+            "movie_title": "슈렉(프랜차이즈)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/ec7d41ac0a7d40c4a5edbf26bdb0ace8.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 23,
+        "fields": {
+            "character_name": "존윅",
+            "character_MBTI_type": "ISTP",
+            "movie_title": "존윅",
+            "character_img_path": "https://static1.personality-database.com/profile_images/2310e21023a64b8da9c6829647b7a02a.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 24,
+        "fields": {
+            "character_name": "잭 챔버스",
+            "character_MBTI_type": "ISTP",
+            "movie_title": "걱정마 달링 (2022)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/4e140dece825426d8e1ba08f229d7073.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 25,
+        "fields": {
+            "character_name": "Gavaldon의 아가사",
+            "character_MBTI_type": "INFJ",
+            "movie_title": "선과 악의 학교",
+            "character_img_path": "https://static1.personality-database.com/profile_images/c856b065d9b1465a88cfaa8ea10d8d28.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 26,
+        "fields": {
+            "character_name": "엘사",
+            "character_MBTI_type": "INFJ",
+            "movie_title": "겨울왕국 (프랜차이즈)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/1e3fca1c585e4862ab91e340a58b99c2.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 27,
+        "fields": {
+            "character_name": "코콜로틀 강",
+            "character_MBTI_type": "INFJ",
+            "movie_title": "웬델과 야생",
+            "character_img_path": "https://static1.personality-database.com/profile_images/01f93a585a334b38890e0411d4e39e7d.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 28,
+        "fields": {
+            "character_name": "미리암 멘델슨",
+            "character_MBTI_type": "XXXX",
+            "movie_title": "터닝 레드 (2022)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/9b02da61efdf49e5b73757a7ef41ff36.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 29,
+        "fields": {
+            "character_name": "모아나 와이알리키",
+            "character_MBTI_type": "ENFJ",
+            "movie_title": "오션 (2016)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/aebfbfa7093f4980a673e6991bc2374d.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 30,
+        "fields": {
+            "character_name": "기쁨",
+            "character_MBTI_type": "ENFJ",
+            "movie_title": "인사이드 아웃 (2015)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/74d2ebc34d914acd96c052ed1ff210dd.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 31,
+        "fields": {
+            "character_name": "루나 러브굿",
+            "character_MBTI_type": "INFP",
+            "movie_title": "해리 포터 / Wizarding World 영화",
+            "character_img_path": "https://static1.personality-database.com/profile_images/74c099ece9a34921a823d1a7d66b0871.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 32,
+        "fields": {
+            "character_name": "미인",
+            "character_MBTI_type": "INFP",
+            "movie_title": "미녀와 야수 (1991)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/6688b38921f54d98bcf75c33af5d8447.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 33,
+        "fields": {
+            "character_name": "빅터 반 도르트",
+            "character_MBTI_type": "INFP",
+            "movie_title": "시체 신부 (2005)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/47bee413b32149d28155255f4e3b16e6.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 34,
+        "fields": {
+            "character_name": "By 보라",
+            "character_MBTI_type": "ENFP",
+            "movie_title": "20세기 소녀 (2022)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/c5a5792af75c40889f0a1f6f4ebd7799.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 35,
+        "fields": {
+            "character_name": "Gavaldon의 소피",
+            "character_MBTI_type": "ENFP",
+            "movie_title": "선과 악의 학교",
+            "character_img_path": "https://static1.personality-database.com/profile_images/4dd5f610707f45ecbfa278578d0d787e.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 36,
+        "fields": {
+            "character_name": "에놀라 홈즈",
+            "character_MBTI_type": "ENFP",
+            "movie_title": "에놀라 홈즈 (2020)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/ea055ba3316449139ae14bde5759ed87.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 37,
+        "fields": {
+            "character_name": "셜록 홈즈",
+            "character_MBTI_type": "INTP",
+            "movie_title": "에놀라 홈즈 (2020)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/2e206c67f26b48c994e6790d8af9a07a.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 38,
+        "fields": {
+            "character_name": "앨리스",
+            "character_MBTI_type": "INTP",
+            "movie_title": "이상한 나라의 앨리스 (1951)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/88180c2f05314be197e5250c220dfeb6.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 39,
+        "fields": {
+            "character_name": "코리 커닝햄",
+            "character_MBTI_type": "INTP",
+            "movie_title": "할로윈(2018년 타임라인)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/22b74787cfd74a5b8d0c59ac70804e2d.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 40,
+        "fields": {
+            "character_name": "고스트페이스",
+            "character_MBTI_type": "ENTP",
+            "movie_title": "스크림(프랜차이즈)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/6a4ff94e77a141ccbc75a43b5d540758.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 41,
+        "fields": {
+            "character_name": "올리버",
+            "character_MBTI_type": "XXXX",
+            "movie_title": "콜 미 바이 유어 네임 (2017)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/fd96e47927ee4170afae89a5719e4b21.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 42,
+        "fields": {
+            "character_name": "닉 와일드",
+            "character_MBTI_type": "ENTP",
+            "movie_title": "주토피아 (2016)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/41f7af255265403d9b922c7d895f2179.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 43,
+        "fields": {
+            "character_name": "미라 트로이",
+            "character_MBTI_type": "INTJ",
+            "movie_title": "에놀라 홈즈 (2020)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/5f7bc81cabd44c56b572b1f0c9af4d40.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 44,
+        "fields": {
+            "character_name": "캣 스트랫포드",
+            "character_MBTI_type": "INTJ",
+            "movie_title": "내가 너에 대해 싫어하는 10가지 (1999)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/93a1fb426f7547a399dd8e7897538988.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 45,
+        "fields": {
+            "character_name": "세베루스 스네이프",
+            "character_MBTI_type": "INTJ",
+            "movie_title": "해리 포터 / Wizarding World 영화",
+            "character_img_path": "https://static1.personality-database.com/profile_images/ac9b69b76bff43e68450d6c1f18b4062.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 46,
+        "fields": {
+            "character_name": "패트릭 베이트먼",
+            "character_MBTI_type": "ENTJ",
+            "movie_title": "아메리칸 사이코 (2000)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/168fad2ffa1542f2bfa249b48a8b4d75.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 47,
+        "fields": {
+            "character_name": "볼드 모트 경",
+            "character_MBTI_type": "ENTJ",
+            "movie_title": "해리 포터 / Wizarding World 영화",
+            "character_img_path": "https://static1.personality-database.com/profile_images/cdfe513fb8b446e9afee4b95377328b2.png"
+        }
+    },
+    {
+        "model": "mbti_compabilities.Character",
+        "pk": 48,
+        "fields": {
+            "character_name": "드레아 토레스",
+            "character_MBTI_type": "ENTJ",
+            "movie_title": "리벤지 (2022)",
+            "character_img_path": "https://static1.personality-database.com/profile_images/898a4f7eddca49cca6ed987a49d691dd.png"
+        }
+    }
+]
