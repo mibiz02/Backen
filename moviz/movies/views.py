@@ -7,6 +7,7 @@ from mbti_compabilities.models import Character
 
 from .serializers import MovieSerializer
 from mbti_compabilities.serializer import CharacterSerializer
+
 # Create your views here.
 @api_view(['GET'])
 def movie_lst(request):

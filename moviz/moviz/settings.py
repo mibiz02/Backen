@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # 'main',
-    # 'movies',
+    'movies',
     'mbti_compabilities',
     # 'accounts',
     'django.contrib.admin',
