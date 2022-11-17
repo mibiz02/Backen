@@ -18,6 +18,6 @@ class TypeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = MBTI_Type
-        fields = ('letter',)
+        fields = ('letter', 'description')
 
         
