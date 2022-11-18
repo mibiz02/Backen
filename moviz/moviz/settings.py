@@ -34,12 +34,21 @@ INSTALLED_APPS = [
     # 'main',
     'movies',
     'mbti_compabilities',
-    # 'accounts',
+    'accounts',
+    
+    'rest_framework',
     
     "corsheaders",
     
-    # 'rest_framework.authtoken',
-    # 'dj_rest_auth',
+    'rest_framework.authtoken',
+    'dj_rest_auth',
+    
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'dj_rest_auth.registration',
+
 
     
     'django.contrib.admin',
@@ -49,6 +58,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
