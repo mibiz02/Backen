@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     
     "corsheaders",
     
+    # 'rest_framework.authtoken',
+    # 'dj_rest_auth',
+
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
