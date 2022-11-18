@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import Character, MBTI_Type
+from .models import MBTI_Comment
 
 class CharacterSerializer(serializers.ModelSerializer):
 
@@ -20,4 +21,9 @@ class TypeSerializer(serializers.ModelSerializer):
         model = MBTI_Type
         fields = ('letter', 'description')
 
-        
+class MBTI_CommentSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model = MBTI_Comment
+        fields = '__all__'
+        read_only_fields = ('mbti_type',)

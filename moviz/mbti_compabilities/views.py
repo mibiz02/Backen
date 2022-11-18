@@ -1,10 +1,11 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
+from rest_framework import status
 
-from django.shortcuts import get_list_or_404
+from django.shortcuts import get_list_or_404, get_object_or_404
 from django.db.models import Q
 
-from .serializer import CharacterSerializer, TypeSerializer
+from .serializer import CharacterSerializer, TypeSerializer, MBTI_CommentSerializer
 from .models import Character, MBTI_Type
 # Create your views here.
 
@@ -58,3 +59,11 @@ def character_mbti_good_matching(request, mbti_letter):
     # characters = Character.objects.filter(id__in=[6])
     serializer = CharacterSerializer(characters, many=True)
     return Response(serializer.data)
+
+@api_view(['POST'])
+def comment_create(request,mbti_letter):
+    this_mbti_object = get_object_or_404(MBTI_Type, letter=mbti_letter)
+    serializer = MBTI_CommentSerializer(data=request.data)
+    if serializer.is_valid(raise_exception=True):
+        serializer.save(mbti_type=this_mbti_object)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)

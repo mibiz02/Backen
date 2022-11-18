@@ -8,11 +8,10 @@ from rest_framework.permissions import IsAuthenticated
 
 
 from .models import Movie
-#from .models import Movie_Comment
 from mbti_compabilities.models import Character
 
 from .serializers import MovieSerializer
-#from .serializers import CommentSerializer
+from .serializers import CommentSerializer
 from mbti_compabilities.serializer import CharacterSerializer
 
 # Create your views here.
@@ -32,10 +31,10 @@ def movie_mbti_character(request, movie_pk):
     serializer  = CharacterSerializer(characters, many=True)
     return Response(serializer.data)
 
-#@api_view(['POST'])
-#def comment_create(request, movie_pk):
-    #movie = get_object_or_404(Movie, pk=movie_pk)
-    #serializer = CommentSerializer(data=request.data)
-    #if serializer.is_valid(raise_exception=True):
-        #serializer.save(movie=movie)
-        #return Response(serializer.data, status=status.HTTP_201_CREATED)
+@api_view(['POST'])
+def comment_create(request, movie_pk):
+    movie = get_object_or_404(Movie, pk=movie_pk)
+    serializer = CommentSerializer(data=request.data)
+    if serializer.is_valid(raise_exception=True):
+        serializer.save(movie=movie)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)

@@ -14,12 +14,12 @@ class MBTI_Type(models.Model):
     #     return self.id
 
 
-# class Comment(models.Model):
-#     content = models.TextField()
-#     mbti_type = models.ForeignKey(MBTI_Type, on_delete=models.CASCADE)
+class MBTI_Comment(models.Model):
+    content = models.TextField()
+    mbti_type = models.ForeignKey(MBTI_Type, on_delete=models.CASCADE)
 #     # user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-#     created_at = models.DateTimeField(auto_now_add=True)
-#     updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
 class Character(models.Model):
     character_name = models.CharField(max_length=50)

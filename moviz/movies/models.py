@@ -15,11 +15,11 @@ class Movie(models.Model):
     
 
 class Movie_Comment(models.Model):
-    # movie = models.ForeignKey(Movie,on_delete=models.CASCADE)
+    movie = models.ForeignKey(Movie,on_delete=models.CASCADE)
     # user = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
-     content = models.TextField()
-    # created_at = models.DateTimeField(auto_now_add=True)
-    # updated_at = models.DateTimeField(auto_now=True)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
      
     # def __str__(self):
     #     return self.content

@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-_pf4l^!@kurnz9g(c7a%10w1jea2%4e0wbif1np@5cblg5n1uq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -95,7 +95,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:8080',
 ]
 
-# CORS_ALLOW_ALL_ORIGINS = True
+#CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'moviz.urls'
 
