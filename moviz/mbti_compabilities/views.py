@@ -6,7 +6,7 @@ from django.shortcuts import get_list_or_404, get_object_or_404
 from django.db.models import Q
 
 from .serializer import CharacterSerializer, TypeSerializer, MBTI_CommentSerializer
-from .models import Character, MBTI_Type
+from .models import Character, MBTI_Type, MBTI_Comment
 # Create your views here.
 
 @api_view(['GET'])
@@ -67,3 +67,19 @@ def comment_create(request,mbti_letter):
     if serializer.is_valid(raise_exception=True):
         serializer.save(mbti_type=this_mbti_object)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+    
+@api_view(['GET', 'DELETE', 'PUT'])
+def comment_detail(request, comment_pk):
+    comment = get_object_or_404(MBTI_Comment, pk=comment_pk)
+    
+    if request.method == 'GET':
+        serializer = MBTI_CommentSerializer(comment)
+        return Response(serializer.data)
+    elif request.method == 'DELETE':
+        comment.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+    elif request.method == 'PUT':
+        serializer = MBTI_CommentSerializer(comment, data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            return Response(serializer.data)
