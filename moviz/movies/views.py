@@ -1,11 +1,12 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework import status
 from django.shortcuts import get_list_or_404, get_object_or_404
 
 from .models import Movie
 from mbti_compabilities.models import Character
 
-from .serializers import MovieSerializer
+from .serializers import MovieSerializer,CommentSerializer
 from mbti_compabilities.serializer import CharacterSerializer
 
 # Create your views here.
@@ -31,3 +32,10 @@ def movie_detail(request, movie_pk):
         serializer = MovieSerializer(movie)
         return Response(serializer.data)
     
+@api_view(['POST'])
+def comment_create(request, movie_pk):
+    movie = get_object_or_404(Movie, pk=movie_pk)
+    serializer = CommentSerializer(data=request.data)
+    if serializer.is_valid(raise_exception=True):
+        serializer.save(movie=movie)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
