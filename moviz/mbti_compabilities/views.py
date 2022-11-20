@@ -65,7 +65,7 @@ def character_mbti_bad_matching(request, mbti_letter):
     this_mbti_object = MBTI_Type.objects.get(letter=mbti_letter)
     bad_matching_lst = []
     q= Q()
-    for el in this_mbti_object.bad_match.all():
+    for el in this_mbti_object.bad_matching.all():
         bad_matching_lst.append(el.id)
         q |= Q(id=el.id)
 
