@@ -23,9 +23,9 @@ class MBTI_Comment(models.Model):
     # like_user = models.ManyToManyField(settings.AUTH_USER_MODEL, symmetrical=False, on_delete=models.CASCADE, related_name="like_mbti_comments")
 
 class Character(models.Model):
+    movie_tmdb_id = models.IntegerField()
     character_name = models.CharField(max_length=50)
     character_MBTI_type = models.CharField(max_length=4)
-    original_movie_title = models.TextField()
     movie_title = models.TextField()
     character_img_path = models.TextField()
     movie_img_path = models.TextField()
