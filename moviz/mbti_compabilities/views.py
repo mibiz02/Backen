@@ -52,8 +52,8 @@ def character_mbti_good_matching(request, mbti_letter):
     good_matching_lst = []
     q= Q()
     for el in this_mbti_object.good_matching.all():
-        good_matching_lst.append(el.id)
-        q |= Q(id=el.id)
+        good_matching_lst.append(el.letter)
+        q |= Q(character_MBTI_type=el.letter)
 
     characters = Character.objects.filter(q)
     # characters = Character.objects.filter(id__in=[6])
@@ -63,16 +63,24 @@ def character_mbti_good_matching(request, mbti_letter):
 @api_view(['GET'])
 def character_mbti_bad_matching(request, mbti_letter):
     this_mbti_object = MBTI_Type.objects.get(letter=mbti_letter)
-    bad_matching_lst = []
     q= Q()
-    for el in this_mbti_object.bad_match.all():
-        bad_matching_lst.append(el.id)
-        q |= Q(id=el.id)
-
-    characters = Character.objects.filter(q)
-    # characters = Character.objects.filter(id__in=[6])
-    serializer = CharacterSerializer(characters, many=True)
-    return Response(serializer.data)
+    bad_matching_lst = []
+    for el in this_mbti_object.bad_matching.all():
+        bad_matching_lst.append(el.letter)
+        q |= Q(character_MBTI_type=el.letter)
+    print('='*30)
+    print(bad_matching_lst)
+    print(q)
+    if not bad_matching_lst:
+        # 나쁜 관계가 없는 경우: q의 조건을 바꿀것
+        characters = Character.objects.filter(id=0)
+        print(characters)
+        serializer = CharacterSerializer(characters, many=True)
+        return Response(serializer.data)
+    else: 
+        characters = Character.objects.filter(q)
+        serializer = CharacterSerializer(characters, many=True)
+        return Response(serializer.data)
 
 
 @api_view(['POST'])
