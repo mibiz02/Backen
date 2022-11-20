@@ -1,6 +1,6 @@
 from rest_framework import serializers
-from .models import Movie
-from .models import Movie_Comment
+from .models import Movie, Movie_Comment
+
 
 class MovieSerializer(serializers.ModelSerializer):
     
