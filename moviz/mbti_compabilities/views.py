@@ -60,6 +60,21 @@ def character_mbti_good_matching(request, mbti_letter):
     serializer = CharacterSerializer(characters, many=True)
     return Response(serializer.data)
 
+@api_view(['GET'])
+def character_mbti_bad_matching(request, mbti_letter):
+    this_mbti_object = MBTI_Type.objects.get(letter=mbti_letter)
+    bad_matching_lst = []
+    q= Q()
+    for el in this_mbti_object.bad_match.all():
+        bad_matching_lst.append(el.id)
+        q |= Q(id=el.id)
+
+    characters = Character.objects.filter(q)
+    # characters = Character.objects.filter(id__in=[6])
+    serializer = CharacterSerializer(characters, many=True)
+    return Response(serializer.data)
+
+
 @api_view(['POST'])
 def comment_create(request,mbti_letter):
     this_mbti_object = get_object_or_404(MBTI_Type, letter=mbti_letter)
