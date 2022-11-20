@@ -11,7 +11,7 @@ class Movie(models.Model):
     vote_count = models.IntegerField()
     release_date = models.TextField()
     genre_name = models.TextField()
-    #like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    # movie_like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='like_movies')
     
 
 class Movie_Comment(models.Model):
@@ -20,6 +20,7 @@ class Movie_Comment(models.Model):
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    # movie_comment_like_users = models.ManyToManyField(settings.AUTH_USER_MOEDL, on_delete=models.CASCADE, related_name='like_movie_comments')
      
     # def __str__(self):
     #     return self.content
