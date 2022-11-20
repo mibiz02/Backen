@@ -1,5 +1,6 @@
 from rest_framework.response import Response
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 
 from django.shortcuts import get_list_or_404, get_object_or_404
@@ -84,6 +85,7 @@ def character_mbti_bad_matching(request, mbti_letter):
 
 
 @api_view(['POST'])
+# @permission_classes([IsAuthenticated])
 def comment_create(request,mbti_letter):
     this_mbti_object = get_object_or_404(MBTI_Type, letter=mbti_letter)
     serializer = MBTI_CommentSerializer(data=request.data)
@@ -92,6 +94,7 @@ def comment_create(request,mbti_letter):
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     
 @api_view(['GET', 'DELETE', 'PUT'])
+# @permission_classes([IsAuthenticated])
 def comment_detail(request, comment_pk):
     comment = get_object_or_404(MBTI_Comment, pk=comment_pk)
     
