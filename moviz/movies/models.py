@@ -3,6 +3,7 @@ from django.conf import settings
 
 # Create your models here.
 class Movie(models.Model):
+    tmdb_id = models.IntegerField()
     title = models.TextField()
     poster_path = models.TextField()
     overview = models.TextField()

@@ -19,8 +19,9 @@ def movie_lst(request):
 
 @api_view(['GET'])
 def movie_mbti_character(request, movie_pk):
-    a = Movie.objects.filter(pk=movie_pk)
-    characters = Character.objects.filter(movie_title=(a[0].movie_title))
+    this_movie = Movie.objects.filter(pk=movie_pk)
+    print(this_movie)
+    characters = Character.objects.filter(movie_tmdb_id=this_movie[0].tmdb_id)
     # characters = Character.objects.filter(movie_title='The Godfather')
     serializer  = CharacterSerializer(characters, many=True)
     return Response(serializer.data)
