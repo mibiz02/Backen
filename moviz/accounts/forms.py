@@ -7,10 +7,12 @@ from django import forms
 class SignupForm(SignupForm):
     first_name = forms.CharField(max_length=40, label='First Name')
     MBTI_type = forms.CharField(max_length=4, label="MBTI Type")
+    last_name = forms.CharField(max_lenth=4, label='Last Name')
 
     def custom_signup(self, request, user):
         user.first_name = self.cleaned_data['first_name']
         user.MBTI_type = self.cleaned_data['MBTI_type']
+        user.last_name = self.cleaned_data['last_name']
         user.save()
         return user
 

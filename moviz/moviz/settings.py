@@ -62,15 +62,18 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
-ACCOUNT_AUTHENTICATION_METHOD ="username"
+# ACCOUNT_AUTHENTICATION_METHOD ="username"
 # ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 # ACCOUNT_EMAIL_REQUIRED = True
 # ACCOUNT_USERNAME_REQUIRED = False
 # ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
-ACCOUNT_FORMS = {'signup': 'moviz.accounts.core.forms.CoreSignupForm'}
+REST_AUTH_REGISTER_SERIALIZERS = {
+    'REGISTER_SERIALIZER': 'accounts.serializers.CustomRegisterSerializer',
+}
 
+ACCOUNT_ADAPTER = 'accounts.adapter.CustomAccountAdapter'
 
 REST_FRAMEWORK = {
     # Authentication
