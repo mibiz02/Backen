@@ -3,5 +3,8 @@ from django.contrib.auth.models import AbstractUser
 # Create your models here.
 
 class User(AbstractUser):
-    # MBTI_type = models.TextField()
-    pass
+    first_name = models.CharField(max_length=128,blank=True, null=True)
+    MBTI_type = models.CharField(max_length=4)
+    
+    def __str__(self):
+        return self.email

@@ -69,6 +69,9 @@ ACCOUNT_AUTHENTICATION_METHOD ="username"
 # ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
+ACCOUNT_FORMS = {'signup': 'moviz.accounts.core.forms.CoreSignupForm'}
+
+
 REST_FRAMEWORK = {
     # Authentication
     'DEFAULT_AUTHENTICATION_CLASSES': [
