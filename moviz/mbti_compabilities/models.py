@@ -29,3 +29,4 @@ class Character(models.Model):
     movie_title = models.TextField()
     character_img_path = models.TextField()
     movie_img_path = models.TextField()
+    movie_backdrop_path = models.TextField()

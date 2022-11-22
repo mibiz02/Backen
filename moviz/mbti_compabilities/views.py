@@ -6,7 +6,7 @@ from rest_framework import status
 from django.shortcuts import get_list_or_404, get_object_or_404
 from django.db.models import Q
 
-from .serializer import CharacterSerializer, TypeSerializer, MBTI_CommentSerializer
+from .serializer import CharacterSerializer, TypeSerializer, MBTI_CommentSerializer,MBTI_CharacterSerializer
 from .models import Character, MBTI_Type, MBTI_Comment
 # Create your views here.
 
@@ -76,11 +76,11 @@ def character_mbti_bad_matching(request, mbti_letter):
         # 나쁜 관계가 없는 경우: q의 조건을 바꿀것
         characters = Character.objects.filter(id=0)
         print(characters)
-        serializer = CharacterSerializer(characters, many=True)
+        serializer = MBTI_CharacterSerializer(characters, many=True)
         return Response(serializer.data)
     else: 
         characters = Character.objects.filter(q)
-        serializer = CharacterSerializer(characters, many=True)
+        serializer = MBTI_CharacterSerializer(characters, many=True)
         return Response(serializer.data)
 
 

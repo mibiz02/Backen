@@ -5,14 +5,12 @@ from django import forms
 # from django.contrib.auth.forms import UserCreationForm
 
 class SignupForm(SignupForm):
-    first_name = forms.CharField(max_length=40, label='First Name')
+    nickname = forms.CharField(max_length=40, label='Nickname')
     MBTI_type = forms.CharField(max_length=4, label="MBTI Type")
-    last_name = forms.CharField(max_lenth=4, label='Last Name')
 
     def custom_signup(self, request, user):
-        user.first_name = self.cleaned_data['first_name']
+        user.nickname = self.cleaned_data['nickname']
         user.MBTI_type = self.cleaned_data['MBTI_type']
-        user.last_name = self.cleaned_data['last_name']
         user.save()
         return user
 
