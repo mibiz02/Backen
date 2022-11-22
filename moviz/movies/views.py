@@ -12,6 +12,7 @@ from mbti_compabilities.serializer import CharacterSerializer
 
 # Create your views here.
 @api_view(['GET'])
+# @permission_classes([IsAuthenticated])
 def movie_lst(request):
     movies = get_list_or_404(Movie)
     serializer = MovieSerializer(movies, many=True)
@@ -40,7 +41,7 @@ def comment_create(request, movie_pk):
     movie = get_object_or_404(Movie, pk=movie_pk)
     serializer = CommentSerializer(data=request.data)
     if serializer.is_valid(raise_exception=True):
-        serializer.save(movie=movie)
+        serializer.save(movie=movie, user=request.user)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 @api_view(['GET'])
@@ -67,4 +68,26 @@ def comment_detail(request, comment_pk):
         if serializer.is_valid(raise_exception=True):
             serializer.save()
             return Response(serializer.data)
+        
+@api_view(['POST'])
+def comment_like(request, comment_pk):
+    comment = Movie_Comment.objects.get(pk=comment_pk)
+    
+    if comment.movie_comment_like_users.filter(pk=request.user.pk).exists():
+        comment.movie_comment_like_users.remove(request.user)
+    else:
+        comment.movie_comment_like_users.add(request.user)
+    serializer = CommentSerializer(comment)
+    return Response(serializer.data)
+    
+@api_view(['POST'])
+def movie_like(request, movie_pk):
+    movie = Movie.objects.get(pk=movie_pk)
+    
+    if movie.movie_like_users.filter(pk=request.user.pk).exists():
+        movie.movie_like_users.remove(request.user)
+    else:
+        movie.movie_like_users.add(request.user)
+    serializer = MovieSerializer(movie)
+    return Response(serializer.data)
         

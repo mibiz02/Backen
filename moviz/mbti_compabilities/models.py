@@ -17,10 +17,10 @@ class MBTI_Type(models.Model):
 class MBTI_Comment(models.Model):
     content = models.TextField()
     mbti_type = models.ForeignKey(MBTI_Type, on_delete=models.CASCADE)
-#     # user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    # like_user = models.ManyToManyField(settings.AUTH_USER_MODEL, symmetrical=False, on_delete=models.CASCADE, related_name="like_mbti_comments")
+    like_user = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="like_mbti_comments")
 
 class Character(models.Model):
     movie_tmdb_id = models.IntegerField()
