@@ -42,6 +42,12 @@ def comment_create(request, movie_pk):
     if serializer.is_valid(raise_exception=True):
         serializer.save(movie=movie)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+@api_view(['GET'])
+def comment_this_list(request, movie_pk):
+    comments = Movie_Comment.objects.filter(movie=movie_pk)
+    serializer = CommentSerializer(comments, many=True)
+    return Response(serializer.data)
     
 @api_view(['GET','DELETE','PUT'])
 # @permission_classes([IsAuthenticated])

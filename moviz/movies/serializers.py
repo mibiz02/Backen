@@ -12,5 +12,5 @@ class CommentSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Movie_Comment
-        fields = '__all__'
+        fields = ('content',)
         read_only_fields = ('movie',)
