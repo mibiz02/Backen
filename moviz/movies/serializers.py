@@ -9,7 +9,8 @@ class MovieSerializer(serializers.ModelSerializer):
         fields='__all__'
         
 class CommentSerializer(serializers.ModelSerializer):
-    username = serializers.CharField(source='user.username', read_only=True)
+    nickname = serializers.CharField(source='user.nickname', read_only=True)
+    MBTI_type = serializers.CharField(source='user.MBTI_type', read_only=True)
     
     class Meta:
         model = Movie_Comment
