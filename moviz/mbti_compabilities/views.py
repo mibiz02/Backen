@@ -89,8 +89,9 @@ def character_mbti_bad_matching(request, mbti_letter):
 def comment_create(request,mbti_letter):
     this_mbti_object = get_object_or_404(MBTI_Type, letter=mbti_letter)
     serializer = MBTI_CommentSerializer(data=request.data)
+    print(this_mbti_object.id)
     if serializer.is_valid(raise_exception=True):
-        serializer.save(mbti_type=this_mbti_object)
+        serializer.save(mbti_type=this_mbti_object, user=request.user)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 

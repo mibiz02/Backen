@@ -12,6 +12,7 @@ from mbti_compabilities.serializer import CharacterSerializer
 
 # Create your views here.
 @api_view(['GET'])
+# @permission_classes([IsAuthenticated])
 def movie_lst(request):
     movies = get_list_or_404(Movie)
     serializer = MovieSerializer(movies, many=True)
@@ -40,7 +41,7 @@ def comment_create(request, movie_pk):
     movie = get_object_or_404(Movie, pk=movie_pk)
     serializer = CommentSerializer(data=request.data)
     if serializer.is_valid(raise_exception=True):
-        serializer.save(movie=movie)
+        serializer.save(movie=movie, user=request.user)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 @api_view(['GET'])
