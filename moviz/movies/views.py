@@ -80,4 +80,14 @@ def comment_like(request, comment_pk):
     serializer = CommentSerializer(comment)
     return Response(serializer.data)
     
+@api_view(['POST'])
+def movie_like(request, movie_pk):
+    movie = Movie.objects.get(pk=movie_pk)
+    
+    if movie.movie_like_users.filter(pk=request.user.pk).exists():
+        movie.movie_like_users.remove(request.user)
+    else:
+        movie.movie_like_users.add(request.user)
+    serializer = MovieSerializer(movie)
+    return Response(serializer.data)
         

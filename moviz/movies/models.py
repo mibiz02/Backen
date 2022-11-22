@@ -14,7 +14,7 @@ class Movie(models.Model):
     poster_path = models.TextField()
     backdrop_path = models.TextField()
     video_path = models.TextField()
-    # movie_like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='like_movies')
+    movie_like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_movies')
 
     def __str__(self):
         return self.title
