@@ -85,14 +85,23 @@ def character_mbti_bad_matching(request, mbti_letter):
 
 
 @api_view(['POST'])
-# @permission_classes([IsAuthenticated])
+@permission_classes([IsAuthenticated])
 def comment_create(request,mbti_letter):
     this_mbti_object = get_object_or_404(MBTI_Type, letter=mbti_letter)
     serializer = MBTI_CommentSerializer(data=request.data)
     if serializer.is_valid(raise_exception=True):
         serializer.save(mbti_type=this_mbti_object)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
-    
+
+
+@api_view(['GET'])
+def comment_this_list(request,mbti_letter):
+    this_mbti_object = MBTI_Type.objects.get(letter=mbti_letter)
+    comment = MBTI_Comment.objects.filter(mbti_type=this_mbti_object.id)
+    serializer = MBTI_CommentSerializer(comment, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
+
 @api_view(['GET', 'DELETE', 'PUT'])
 # @permission_classes([IsAuthenticated])
 def comment_detail(request, comment_pk):

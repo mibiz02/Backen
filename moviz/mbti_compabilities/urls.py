@@ -9,5 +9,6 @@ urlpatterns = [
     path('type/<str:mbti_letter>/good', views.character_mbti_good_matching),
     path('type/<str:mbti_letter>/bad', views.character_mbti_bad_matching),
     path('type/<str:mbti_letter>/comment', views.comment_create),
+    path('type/<str:mbti_letter>/this_comment', views.comment_this_list),
     path('type/comment/<int:comment_pk>', views.comment_detail)
 ]
