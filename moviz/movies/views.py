@@ -69,3 +69,15 @@ def comment_detail(request, comment_pk):
             serializer.save()
             return Response(serializer.data)
         
+@api_view(['POST'])
+def comment_like(request, comment_pk):
+    comment = Movie_Comment.objects.get(pk=comment_pk)
+    
+    if comment.movie_comment_like_users.filter(pk=request.user.pk).exists():
+        comment.movie_comment_like_users.remove(request.user)
+    else:
+        comment.movie_comment_like_users.add(request.user)
+    serializer = CommentSerializer(comment)
+    return Response(serializer.data)
+    
+        

@@ -26,7 +26,7 @@ class Movie_Comment(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
-    # movie_comment_like_users = models.ManyToManyField(settings.AUTH_USER_MOEDL, on_delete=models.CASCADE, related_name='like_movie_comments')
+    movie_comment_like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_movie_comments')
      
     def __str__(self):
         return self.content
