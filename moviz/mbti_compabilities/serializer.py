@@ -43,4 +43,4 @@ class MBTI_CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = MBTI_Comment
         fields = '__all__'
-        read_only_fields = ('mbti_type','user',)
+        read_only_fields = ('mbti_type','user','like_user',)

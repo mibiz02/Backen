@@ -119,3 +119,17 @@ def comment_detail(request, comment_pk):
         if serializer.is_valid(raise_exception=True):
             serializer.save()
             return Response(serializer.data)
+        
+        
+@api_view(['POST'])
+def comment_like(request,comment_pk):
+    comment = MBTI_Comment.objects.get(pk=comment_pk)
+    
+    if comment.like_user.filter(pk=request.user.pk).exists():
+        comment.like_user.remove(request.user)
+    else:
+        comment.like_user.add(request.user)
+    serializer = MBTI_CommentSerializer(comment)
+    return Response(serializer.data)
+        
+    
