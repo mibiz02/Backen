@@ -89,9 +89,8 @@ def character_mbti_bad_matching(request, mbti_letter):
 def comment_create(request,mbti_letter):
     this_mbti_object = get_object_or_404(MBTI_Type, letter=mbti_letter)
     serializer = MBTI_CommentSerializer(data=request.data)
-    print(this_mbti_object.id)
     if serializer.is_valid(raise_exception=True):
-        serializer.save(mbti_type=this_mbti_object, user=request.user)
+        serializer.save(mbti_type=this_mbti_object)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
@@ -119,17 +118,3 @@ def comment_detail(request, comment_pk):
         if serializer.is_valid(raise_exception=True):
             serializer.save()
             return Response(serializer.data)
-        
-        
-@api_view(['POST'])
-def comment_like(request,comment_pk):
-    comment = MBTI_Comment.objects.get(pk=comment_pk)
-    
-    if comment.like_user.filter(pk=request.user.pk).exists():
-        comment.like_user.remove(request.user)
-    else:
-        comment.like_user.add(request.user)
-    serializer = MBTI_CommentSerializer(comment)
-    return Response(serializer.data)
-        
-    
