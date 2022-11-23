@@ -7,4 +7,4 @@ class User(AbstractUser):
     MBTI_type = models.CharField(max_length=4, blank=True, null=True)
     
     def __str__(self):
-        return self.email
+        return self.username

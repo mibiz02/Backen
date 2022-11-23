@@ -39,6 +39,7 @@ class TypeSerializer(serializers.ModelSerializer):
 class MBTI_CommentSerializer(serializers.ModelSerializer):
     nickname = serializers.CharField(source='user.nickname', read_only=True)
     user_MBTI_type = serializers.CharField(source='user.MBTI_type', read_only=True)
+    like_count = serializers.IntegerField(source='like_user.count', read_only=True)
     
     class Meta:
         model = MBTI_Comment
