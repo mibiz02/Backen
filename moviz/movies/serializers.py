@@ -2,13 +2,12 @@ from rest_framework import serializers
 from .models import Movie, Movie_Comment
 
 
-
-class CommentCountSerializer(serializers.ModelSerializer):
-
+class MovieSerializer(serializers.ModelSerializer):
+    like_count = serializers.IntegerField(source='movie_like_users.count', read_only=True)
+    
     class Meta:
-        model = Movie_Comment
+        model = Movie
         fields = '__all__'
-        read_only_fields = ('movie','user','movie_comment_like_users',)
 
         
 class CommentSerializer(serializers.ModelSerializer):
@@ -20,10 +19,3 @@ class CommentSerializer(serializers.ModelSerializer):
         model = Movie_Comment
         fields = '__all__'
         read_only_fields = ('movie','user','movie_comment_like_users',)
-
-class MovieSerializer(serializers.ModelSerializer):
-    like_count = serializers.IntegerField(source='movie_like_users.count', read_only=True)
-    like_count_username = serializers.CharField(source='movie_like_users.all',read_only=True)
-    class Meta:
-        model=Movie
-        fields='__all__'

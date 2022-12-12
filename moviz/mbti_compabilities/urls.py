@@ -11,7 +11,7 @@ urlpatterns = [
     path('type/<str:mbti_letter>/bad', views.character_mbti_bad_matching),
     # 댓글 기능
     path('type/<str:mbti_letter>/comment', views.comment_create),
-    path('type/<str:mbti_letter>/this_comment', views.comment_this_list),
+    path('type/<str:mbti_letter>/this_comments', views.comment_this_list),
     path('type/comment/<int:comment_pk>', views.comment_detail),
     path('type/comment/<int:comment_pk>/written', views.mbti_comment_written),
     # 댓글 좋아요 기능
