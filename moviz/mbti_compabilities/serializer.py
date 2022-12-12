@@ -10,8 +10,6 @@ class CharacterSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class MBTI_CharacterSerializer(serializers.ModelSerializer):
-    # character_set = CharacterSerializer(many=True, read_only=True)
-    # character_count = serializers.IntegerField(source='character_set.count', read_only=True)
 
     class Meta:
         model = Character
@@ -30,15 +28,15 @@ class BadmatchingTypeSerializer(serializers.ModelSerializer):
         fields = ('letter', 'bad_matching',)
 
 class TypeSerializer(serializers.ModelSerializer):
-    # good_matching_for = GoodmatchingTypeSerializer(self, many=True)
 
     class Meta:
         model = MBTI_Type
-        fields = ('letter', 'description')
+        fields = ('id', 'letter', 'description')
 
 class MBTI_CommentSerializer(serializers.ModelSerializer):
     nickname = serializers.CharField(source='user.nickname', read_only=True)
-    user_MBTI_type = serializers.CharField(source='user.MBTI_type', read_only=True)
+    MBTI_type = serializers.CharField(source='user.MBTI_type', read_only=True)
+    topic_MBTI = serializers.CharField(source='mbti_type.letter', read_only=True)
     like_count = serializers.IntegerField(source='like_user.count', read_only=True)
     
     class Meta:

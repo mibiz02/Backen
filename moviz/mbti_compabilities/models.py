@@ -5,13 +5,10 @@ from django.conf import settings
 class MBTI_Type(models.Model):
     letter = models.CharField(max_length=4)
     description = models.TextField()
-    # good_matching = models.JSONField(null=True)
     good_matching = models.ManyToManyField('self', symmetrical=False, related_name='good_matched')
-    # good_matching = models.JSONField(null=True)
     bad_matching = models.ManyToManyField('self', symmetrical=False, related_name='bad_matched')
-    # type_users = models.ManyToManyField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    # def __str__(self):
-    #     return self.id
+    def __str__(self):
+        return self.id
 
 
 class MBTI_Comment(models.Model):
@@ -21,6 +18,10 @@ class MBTI_Comment(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     like_user = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="like_mbti_comments")
+    
+    def __str__(self):
+        return self.content
+
 
 class Character(models.Model):
     movie_tmdb_id = models.IntegerField()
@@ -30,3 +31,6 @@ class Character(models.Model):
     character_img_path = models.TextField()
     movie_img_path = models.TextField()
     movie_backdrop_path = models.TextField()
+    
+    def __str__(self):
+        return self.character_name
