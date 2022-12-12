@@ -6,7 +6,8 @@ from allauth.account.utils import setup_user_email
 from dj_rest_auth.registration.serializers import RegisterSerializer
 
 from .models import User
-from movies.models import Movie
+from movies.models import Movie, Movie_Comment
+from mbti_compabilities.models import MBTI_Comment
 
 
 class CustomRegisterSerializer(RegisterSerializer):
@@ -20,28 +21,32 @@ class CustomRegisterSerializer(RegisterSerializer):
         return data_dict
 
 
-class MovieSetSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Movie
-        fields = ('id',)
-
 class UserSerializer(serializers.ModelSerializer):
-    # like_movies_title = MovieSetSerializer(read_only=True)
-    # like_movies_title = serializers.CharField(source='like_movies.all', read_only=True)
-    # like_movies_title = serializers.ListField(source='like_movies.all', read_only=True)
-    # count_like_movies_set = MovieSerializer(read_only=True, many=True)
-    # count_like_movies
-    # like_movies
-
 
     class Meta:
         model = User
-        fields=('username','email','nickname','date_joined','MBTI_type',)
-        # fields=('nickname','like_movies',)
+        fields='__all__'
 
+
+class MovieCommentSerializer(serializers.ModelSerializer):
+    movie_title = serializers.CharField(source='movie.title', read_only=True)
+    
+    class Meta:
+        model = Movie_Comment
+        fields = '__all__'
+        
+
+class MBTICommentSerailizer(serializers.ModelSerializer):
+    mbti_page = serializers.CharField(source='mbti_type.letter', read_only=True)
+    
+    class Meta:
+        model = MBTI_Comment
+        fields = '__all__'
+        
 class likeMovieSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Movie
-        fields = ('title',)
+        fields = '__all__'
+        
+        
